@@ -68,3 +68,11 @@ body:
         Do not copy and paste the logs here.
     validations:
       required: false
+
+  - type: checkboxes
+    id: not-a-reported-issue
+    attributes:
+      label: "I have confirmed that this is not a reported bug / issue."
+      options:
+        - label: "I confirm this is not a duplicate bug / issue report."
+          required: true

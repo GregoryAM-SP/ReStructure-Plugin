@@ -21,3 +21,11 @@ body:
       description: A clear and concise description of the feature you're suggesting.
     validations:
       required: true
+
+  - type: checkboxes
+    id: not-a-requested-feature
+    attributes:
+      label: "I have confirmed that this is not a duplicate feature request."
+      options:
+        - label: "I confirm this is not a duplicate feature request."
+          required: true
