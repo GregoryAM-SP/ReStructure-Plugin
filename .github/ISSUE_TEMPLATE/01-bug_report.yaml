@@ -1,0 +1,70 @@
+name: Bug report
+description: File a bug report
+title: "[Bug Report]"
+labels: ["bug"]
+projects: ["GregoryAM-SP/9"]
+assignees:
+  - Gregory-AM
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the following fields to help me reproduce and fix the issue.
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: "[Re]Structure version:"
+      description: What version of [Re]Structure were you using?
+      options:
+        - 3.1.0
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mcreator-version
+    attributes:
+      label: "MCreator version:"
+      description: Which version of MCreator were you using?
+      options:
+        - 2025.1.13416
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the bug:"
+      description: Please describe the bug you encountered.
+      placeholder: |
+        When I change the value in Adapt the Terrain / Ground below the structure, it does not save.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce the bug:"
+      description: Please describe the steps to reproduce the bug. (Use a numbered list with as much detail as possible)
+      placeholder: |
+        1. Open Mod Element.
+        2. Change value in Adapt the Terrain / Ground below the structure.
+        3. Save mod element.
+        4. Reopen Mod Element.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Relevant log output"
+      description: If applicable, please provide the logs from MCreator or any other relevant logs that could help in diagnosing the issue.
+      placeholder: |
+        Drag and drop the log file and any other relevant files here.
+        Do not copy and paste the logs here.
+    validations:
+      required: false
