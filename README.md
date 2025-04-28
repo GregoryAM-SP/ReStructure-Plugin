@@ -6,13 +6,13 @@
 
 ### 🏗️ New in 3.1.0: Mod Element for NeoForge
 
-Version `3.1.0` introduces a **dedicated Mod Element** for NeoForge (1.21.4) and MCreator v2025.1, making structure creation even easier and more integrated with modern modding workflows.
+Version `3.1.0` introduces a **Mod Element** for NeoForge (1.21.4) and MCreator v2025.1.
 
 ---
 
 ### 🗺️ Available Pages
 
-- **Structure Page** – Define the structure itself.
+- **Structure Page** – Define the structure itself and settings.
 - **Spawn Override Page** – Customize entity spawning in / around the structure.
 - **Structure Set Page** – Define the weight of structures to spawn.
 - **Exclusion Zone Page** – Manage structures spawning near other structures.
@@ -21,14 +21,14 @@ Version `3.1.0` introduces a **dedicated Mod Element** for NeoForge (1.21.4) and
 
 ### ⚙️ Fabric & QuiltMC Support
 
-- Fabric support was included in previous <b>[</b>Re<b>]</b>Structure versions and **will return in a future update**.
+- Fabric support was included in previous **[Re]Structure** versions and **will return in a future update**.
 - QuiltMC support is also **planned for a later release**.
 
 ---
 
 ### 📦 Update and Installation Features
 
-<b>[</b>Re<b>]</b>Structure includes built-in options for **manual or automatic updates**:
+**[Re]Structure** includes built-in options for **manual or automatic updates**:
 
 - Download and install updates directly within the plugin menu.
 - Option to **enable automatic updates** for seamless future releases.
@@ -39,8 +39,8 @@ Version `3.1.0` introduces a **dedicated Mod Element** for NeoForge (1.21.4) and
 
 ### 🧭 Plugin Menu Includes
 
-- 🔗 [Re]Structure Plugin Page [(link)](https://mcreator.net/plugin/100952/restructure)
-- 🔗 [Re]Structure Development Board [(link)](https://github.com/orgs/GregoryAM-SP/projects/9)
-- 🔗 [Re]Structure Plugin Issues [(link)](https://github.com/GregoryAM-SP/ReStructure-Plugin/issues)
+- 🔗 **[Re]Structure** Plugin Page [(link)](https://mcreator.net/plugin/100952/restructure)
+- 🔗 **[Re]Structure** Development Board [(link)](https://github.com/orgs/GregoryAM-SP/projects/9)
+- 🔗 **[Re]Structure** Plugin Issues [(link)](https://github.com/GregoryAM-SP/ReStructure-Plugin/issues)
 - 📜 Changelog Viewer Dialog
 - ⚙️ <b>[</b>Re<b>]</b>Structure Settings (automatic update toggle)
