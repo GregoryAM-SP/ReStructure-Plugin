@@ -44,3 +44,18 @@ Version `3.1.0` introduces a **Mod Element** for NeoForge (1.21.4) and MCreator 
 - 🔗 **[Re]Structure** Plugin Issues [(link)](https://github.com/GregoryAM-SP/ReStructure-Plugin/issues)
 - 📜 Changelog Viewer Dialog
 - ⚙️ <b>[</b>Re<b>]</b>Structure Settings (automatic update toggle)
+
+---
+
+### 😁 Enjoy the plugin?
+
+Consider leaving a **⭐ star** on the [GitHub repository](https://github.com/GregoryAM-SP/ReStructure-Plugin) or by **👍upvoting** on the [MCreator plugin page](https://mcreator.net/plugin/100952/restructure)!
+
+---
+
+### Want to support the developer?
+
+While it says buy me a coffee, I'm not big into that.\
+You can buy be a Tea 🍵 instead!
+
+<a href='https://ko-fi.com/L3L0NE676' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
