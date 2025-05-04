@@ -1,5 +1,10 @@
 # [Re]Structure MCreator Plugin
 
+### At this time, all [Re]Structure releases have been removed due to a persistent bug.
+A Discord link will appear here within the next 48 hours.
+
+---
+
 **[Re]Structure** is a Java plugin for MCreator that allows users to create **data pack-driven structures** with far more flexibility and options than the default Structure element.
 
 ---
