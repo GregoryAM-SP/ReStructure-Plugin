@@ -108,6 +108,7 @@ jobs:
                       --arg releaseNotes "$RELEASE_NOTES" \
                       --arg bugField "$BUG_FIELD" \
                       '{
+                        "content": "<@&1368448364865126491> ",
                         "embeds": [
                           {
                             "title": $title,
