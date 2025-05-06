@@ -98,7 +98,8 @@ jobs:
           fi
 
           # Build JSON payload (correct multiline handling)
-          JSON=$(jq -n --arg title "$VERSION_TYPE" \
+          JSON=$(jq -n --arg content "<@&1368448364865126491> " \
+                      --arg title "$VERSION_TYPE" \
                       --arg description "$DESCRIPTION" \
                       --arg url "$RELEASE_URL" \
                       --arg timestamp "$(date --utc +%Y-%m-%dT%H:%M:%SZ)" \
