@@ -1,7 +1,6 @@
 # [Re]Structure MCreator Plugin
 
 ### At this time, all [Re]Structure releases have been removed due to a persistent bug.
-A Discord link will appear here within the next 48 hours.
 
 ---
 
@@ -64,3 +63,7 @@ While it says buy me a coffee, I'm not big into that.\
 You can buy be a Tea 🍵 instead!
 
 <a href='https://ko-fi.com/L3L0NE676' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+---
+
+Join me on [DISCORD](https://discord.gg/yjCtGC27)
