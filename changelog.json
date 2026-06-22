@@ -2,6 +2,17 @@
   "restructure": {
     "schema_version": 2,
     "releases_by_version": {
+      "3.1.1": {
+        "channel": "stable",
+        "update_type": "patch",
+        "update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/download/v3.1.1/ReStructure_v3.1.1.zip",
+        "view_update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/tag/v3.1.1",
+        "changelog": [
+          "Testing Multi-lined release notes",
+          "This is for testing purposes for GitHub Actions",
+          "Discord Webhook Notifications"
+        ]
+      }
     }
   }
 }
