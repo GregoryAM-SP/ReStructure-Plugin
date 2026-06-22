@@ -2,33 +2,6 @@
   "restructure": {
     "schema_version": 2,
     "releases_by_version": {
-      "3.1.1-beta": {
-        "channel": "beta",
-        "update_type": "patch",
-        "update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/download/v3.1.1-beta/ReStructure_v3.1.1-beta.zip",
-        "view_update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/tag/v3.1.1-beta",
-        "changelog": [
-          "Testing GitHub Actions & Discord Webhook Notifications."
-        ]
-      },
-      "3.1.1-rc.1": {
-        "channel": "release_candidate",
-        "update_type": "patch",
-        "update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/download/v3.1.1-rc.1/ReStructure_v3.1.1-rc.1.zip",
-        "view_update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/tag/v3.1.1-rc.1",
-        "changelog": [
-          "Testing GitHub Action & Discord Webhook Notifications."
-        ]
-      },
-      "3.1.1": {
-        "channel": "stable",
-        "update_type": "patch",
-        "update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/download/v3.1.1/ReStructure_v3.1.1.zip",
-        "view_update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/tag/v3.1.1",
-        "changelog": [
-          "Testing GitHub Actions & Discord Webhook Notifications"
-        ]
-      }
     }
   }
 }
