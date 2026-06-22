@@ -10,6 +10,15 @@
         "changelog": [
           "Testing GitHub Actions & Discord Webhook Notifications."
         ]
+      },
+      "3.1.1-rc.1": {
+        "channel": "release_candidate",
+        "update_type": "patch",
+        "update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/download/v3.1.1-rc.1/ReStructure_v3.1.1-rc.1.zip",
+        "view_update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/tag/v3.1.1-rc.1",
+        "changelog": [
+          "Testing GitHub Action & Discord Webhook Notifications."
+        ]
       }
     }
   }
