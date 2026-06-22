@@ -24,8 +24,8 @@ jobs:
           echo "RELEASE_NAME=${{ github.event.release.name }}" >> "$GITHUB_ENV"
           echo "RELEASE_URL=${{ github.event.release.html_url }}" >> "$GITHUB_ENV"
           echo "IS_PRERELEASE=${{ github.event.release.prerelease }}" >> "$GITHUB_ENV"
-          # Write release body to a file to preserve multi-line content
-          echo '${{ toJSON(github.event.release.body) }}' > release_body.json
+          # Read release body from event payload as a JSON string (safe for quotes/apostrophes/newlines)
+          jq -c '.release.body // ""' "$GITHUB_EVENT_PATH" > release_body.json
 
       - name: Update changelog.json
         env:
