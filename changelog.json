@@ -2,6 +2,15 @@
   "restructure": {
     "schema_version": 2,
     "releases_by_version": {
+      "3.1.1-beta": {
+        "channel": "beta",
+        "update_type": "patch",
+        "update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/download/v3.1.1-beta/ReStructure_v3.1.1-beta.zip",
+        "view_update_url": "https://github.com/GregoryAM-SP/ReStructure-Plugin/releases/tag/v3.1.1-beta",
+        "changelog": [
+          "Testing GitHub Actions & Discord Webhook Notifications."
+        ]
+      }
     }
   }
 }
