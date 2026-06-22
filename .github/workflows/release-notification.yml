@@ -4,19 +4,107 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: write
+
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
       - name: Extract release info
         id: release_info
         run: |
-          echo "RELEASE_TAG=${GITHUB_REF##*/}" >> "$GITHUB_ENV"
+          echo "RELEASE_TAG=${{ github.event.release.tag_name }}" >> "$GITHUB_ENV"
           echo "RELEASE_NAME=${{ github.event.release.name }}" >> "$GITHUB_ENV"
           echo "RELEASE_URL=${{ github.event.release.html_url }}" >> "$GITHUB_ENV"
           echo "IS_PRERELEASE=${{ github.event.release.prerelease }}" >> "$GITHUB_ENV"
           # Write release body to a file to preserve multi-line content
           echo '${{ toJSON(github.event.release.body) }}' > release_body.json
+
+      - name: Update changelog.json
+        env:
+          RELEASE_TAG: ${{ env.RELEASE_TAG }}
+          RELEASE_URL: ${{ env.RELEASE_URL }}
+          IS_PRERELEASE: ${{ env.IS_PRERELEASE }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          VERSION_KEY="${RELEASE_TAG#v}"
+
+          if [[ "$RELEASE_TAG" == *"rc"* || "$RELEASE_TAG" == *"rc."* ]]; then
+            CHANNEL="release_candidate"
+          elif [[ "$RELEASE_TAG" == *"beta"* || "$IS_PRERELEASE" == "true" ]]; then
+            CHANNEL="beta"
+          else
+            CHANNEL="stable"
+          fi
+
+          if [[ "$VERSION_KEY" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
+            MINOR="${BASH_REMATCH[2]}"
+            PATCH="${BASH_REMATCH[3]}"
+            if [[ "$PATCH" != "0" ]]; then
+              UPDATE_TYPE="patch"
+            elif [[ "$MINOR" == "0" ]]; then
+              UPDATE_TYPE="major"
+            else
+              UPDATE_TYPE="minor"
+            fi
+          else
+            UPDATE_TYPE="patch"
+          fi
+
+          UPDATE_URL=$(jq -r '.release.assets[]? | select(.name | test("\\.zip$"; "i")) | .browser_download_url' "$GITHUB_EVENT_PATH" | head -n 1)
+          if [[ -z "$UPDATE_URL" || "$UPDATE_URL" == "null" ]]; then
+            UPDATE_URL="https://github.com/$REPOSITORY/releases/download/$RELEASE_TAG/ReStructure_$RELEASE_TAG.zip"
+          fi
+
+          CHANGELOG_JSON=$(jq -r . release_body.json | jq -R -s '
+            split("\n")
+            | map(gsub("\\r"; "")
+              | gsub("^\\s*[-*]\\s*"; "")
+              | gsub("^\\s+|\\s+$"; ""))
+            | map(select(length > 0))
+          ')
+
+          if [[ "$(echo "$CHANGELOG_JSON" | jq 'length')" == "0" ]]; then
+            CHANGELOG_JSON='["No changelog notes were provided for this release."]'
+          fi
+
+          TMP_FILE=$(mktemp)
+          jq \
+            --arg version "$VERSION_KEY" \
+            --arg channel "$CHANNEL" \
+            --arg update_type "$UPDATE_TYPE" \
+            --arg update_url "$UPDATE_URL" \
+            --arg view_update_url "$RELEASE_URL" \
+            --argjson changelog "$CHANGELOG_JSON" \
+            '.restructure.releases_by_version[$version] = {
+              "channel": $channel,
+              "update_type": $update_type,
+              "update_url": $update_url,
+              "view_update_url": $view_update_url,
+              "changelog": $changelog
+            }' changelog.json > "$TMP_FILE"
+
+          mv "$TMP_FILE" changelog.json
+
+      - name: Commit changelog.json update
+        run: |
+          if git diff --quiet -- changelog.json; then
+            echo "No changelog update to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add changelog.json
+          git commit -m "chore(changelog): add release ${RELEASE_TAG#v}"
+          git push
 
       - name: Send Discord Notification
         env:
